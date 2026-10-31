@@ -2,12 +2,18 @@ import AppIntents
 import SwiftData
 
 extension SpendCategory: AppEnum {
-    static var typeDisplayRepresentation: TypeDisplayRepresentation { "Категория" }
-    static var caseDisplayRepresentations: [SpendCategory: DisplayRepresentation] {
-        Dictionary(uniqueKeysWithValues: allCases.map { c in
-            (c, DisplayRepresentation(title: "\(c.rawValue)"))
-        })
-    }
+    static let typeDisplayRepresentation: TypeDisplayRepresentation = "Категория"
+    static let caseDisplayRepresentations: [SpendCategory: DisplayRepresentation] = [
+        .food: "Еда",
+        .transport: "Транспорт",
+        .home: "Жильё",
+        .fun: "Развлечения",
+        .study: "Учёба",
+        .health: "Здоровье",
+        .shopping: "Покупки",
+        .subscriptions: "Подписки",
+        .other: "Другое"
+    ]
 }
 
 struct AddExpenseIntent: AppIntent {
